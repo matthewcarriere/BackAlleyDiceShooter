@@ -10,6 +10,9 @@
 
 @implementation WagerViewController
 
+@synthesize wagerPicker;
+@synthesize wagers;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,13 +39,13 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    wagers = [[NSArray alloc] initWithObjects:@"Big", @"Small", @"Odd", @"Even", nil];
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -55,6 +58,27 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -
+#pragma mark PickerViewDataSource Methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [wagers count];
+}
+
+#pragma mark -
+#pragma mark PickerViewDelegate Methods
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [wagers objectAtIndex:row];
 }
 
 @end
