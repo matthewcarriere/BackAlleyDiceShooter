@@ -20,6 +20,7 @@
 
 @synthesize funds;
 @synthesize dice;
+@synthesize tapGesture;
 
 - (CGPoint)generateRandomDieLocation
 {

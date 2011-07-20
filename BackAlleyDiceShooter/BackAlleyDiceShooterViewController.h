@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *funds;
 @property (nonatomic, retain) NSMutableArray *dice;
+@property (nonatomic, retain) IBOutlet UITapGestureRecognizer *tapGesture;
 
 @end
