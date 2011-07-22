@@ -7,11 +7,13 @@
 //
 
 #import "WagerViewController.h"
+#import "WagerTableViewCell.h"
 
 @implementation WagerViewController
 
 @synthesize wagerPicker;
 @synthesize wagers;
+@synthesize gameName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,24 +63,22 @@
 }
 
 #pragma mark -
-#pragma mark PickerViewDataSource Methods
+#pragma mark TableView Datasource Methods
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [wagers count];
 }
 
-#pragma mark -
-#pragma mark PickerViewDelegate Methods
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [wagers objectAtIndex:row];
+    WagerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WagerCell"];
+    
+    // use key value coding to have this happen automagically when a model is assigned?
+    cell.gameName.text = [NSString stringWithFormat:@"a name"];
+    cell.gameDescription.text = [NSString stringWithFormat:@"its awesome"];
+    
+    return cell;
 }
 
 @end
