@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WagerViewController : UITableViewController <UITableViewDataSource>
+@interface WagerViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIPickerView *wagerPicker;
 @property (nonatomic, retain) NSArray *wagers;

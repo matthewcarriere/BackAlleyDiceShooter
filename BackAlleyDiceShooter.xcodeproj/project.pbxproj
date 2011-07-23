@@ -220,6 +220,7 @@
 		34C716B413D22AB500DBB7C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Black Ninja Software";
 			};
 			buildConfigurationList = 34C716B713D22AB500DBB7C6 /* Build configuration list for PBXProject "BackAlleyDiceShooter" */;
