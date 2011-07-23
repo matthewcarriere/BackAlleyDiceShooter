@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341B512013DA91DD00272018 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341B511F13DA91DD00272018 /* Games.plist */; };
 		3482122113D66310006CA6BD /* WagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* WagerViewController.m */; };
 		3491537E13D94AEC00497441 /* WagerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491537D13D94AEC00497441 /* WagerTableViewCell.m */; };
 		34C716C213D22AB500DBB7C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C113D22AB500DBB7C6 /* UIKit.framework */; };
@@ -27,6 +28,7 @@
 		34C716F013D22AB500DBB7C6 /* BackAlleyDiceShooterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716EF13D22AB500DBB7C6 /* BackAlleyDiceShooterTests.m */; };
 		34C716FB13D22B6000DBB7C6 /* Die.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716FA13D22B6000DBB7C6 /* Die.m */; };
 		34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7170913D2E11E00DBB7C6 /* GameEngine.m */; };
+		34D3058A13DA85B700527CC3 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3058913DA85B700527CC3 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341B511F13DA91DD00272018 /* Games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Games.plist; sourceTree = "<group>"; };
 		3482121F13D66310006CA6BD /* WagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WagerViewController.h; sourceTree = "<group>"; };
 		3482122013D66310006CA6BD /* WagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WagerViewController.m; sourceTree = "<group>"; };
 		3491537C13D94AEC00497441 /* WagerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WagerTableViewCell.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		34C716FA13D22B6000DBB7C6 /* Die.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Die.m; sourceTree = "<group>"; };
 		34C7170813D2E11E00DBB7C6 /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
 		34C7170913D2E11E00DBB7C6 /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
+		34D3058813DA85B700527CC3 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		34D3058913DA85B700527CC3 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +146,9 @@
 				34C716FA13D22B6000DBB7C6 /* Die.m */,
 				34C7170813D2E11E00DBB7C6 /* GameEngine.h */,
 				34C7170913D2E11E00DBB7C6 /* GameEngine.m */,
+				34D3058813DA85B700527CC3 /* Game.h */,
+				34D3058913DA85B700527CC3 /* Game.m */,
+				341B511F13DA91DD00272018 /* Games.plist */,
 			);
 			path = BackAlleyDiceShooter;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				34C716CC13D22AB500DBB7C6 /* InfoPlist.strings in Resources */,
 				34C716D513D22AB500DBB7C6 /* MainStoryboard.storyboard in Resources */,
 				34C716D713D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h in Resources */,
+				341B512013DA91DD00272018 /* Games.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +300,7 @@
 				34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */,
 				3482122113D66310006CA6BD /* WagerViewController.m in Sources */,
 				3491537E13D94AEC00497441 /* WagerTableViewCell.m in Sources */,
+				34D3058A13DA85B700527CC3 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

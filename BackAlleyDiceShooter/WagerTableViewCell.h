@@ -10,7 +10,7 @@
 
 @interface WagerTableViewCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UILabel *gameName;
-@property (nonatomic, retain) IBOutlet UILabel *gameDescription;
+@property (nonatomic, retain) IBOutlet UILabel *name;
+@property (nonatomic, retain) IBOutlet UILabel *description;
 
 @end

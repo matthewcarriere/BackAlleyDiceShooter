@@ -8,12 +8,11 @@
 
 #import "WagerViewController.h"
 #import "WagerTableViewCell.h"
+#import "Game.h"
 
 @implementation WagerViewController
 
-@synthesize wagerPicker;
-@synthesize wagers;
-@synthesize gameName;
+@synthesize games;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +45,7 @@
 {
     [super viewDidLoad];
     
-    wagers = [[NSArray alloc] initWithObjects:@"Big", @"Small", @"Odd", @"Even", nil];
+    games = [[NSArray alloc] initWithObjects:@"Big", @"Small", @"Odd", @"Even", nil];
 }
 
 - (void)viewDidUnload
@@ -67,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [wagers count];
+    return [games count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,8 +74,8 @@
     WagerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WagerCell"];
     
     // use key value coding to have this happen automagically when a model is assigned?
-    cell.gameName.text = [NSString stringWithFormat:@"a name"];
-    cell.gameDescription.text = [NSString stringWithFormat:@"its awesome"];
+    cell.name.text = [NSString stringWithFormat:@"a name"];
+    cell.description.text = [NSString stringWithFormat:@"its awesome"];
     
     return cell;
 }

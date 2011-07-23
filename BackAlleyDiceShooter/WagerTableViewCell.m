@@ -10,8 +10,8 @@
 
 @implementation WagerTableViewCell
 
-@synthesize gameName;
-@synthesize gameDescription;
+@synthesize name;
+@synthesize description;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

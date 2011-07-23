@@ -10,8 +10,6 @@
 
 @interface WagerViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) IBOutlet UIPickerView *wagerPicker;
-@property (nonatomic, retain) NSArray *wagers;
-@property (nonatomic, retain) IBOutlet NSString *gameName;
+@property (nonatomic, retain) NSArray *games;
 
 @end

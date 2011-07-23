@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Games</key>
+	<array>
+		<dict>
+			<key>Big</key>
+			<string></string>
+			<key>Roll between 11 and 17</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Small</key>
+			<string></string>
+			<key>Roll between 4 and 10</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Odd</key>
+			<string></string>
+			<key>Roll odd</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Even</key>
+			<string></string>
+			<key>Roll even</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Triple</key>
+			<string></string>
+			<key>Roll 3 the same</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Double</key>
+			<string></string>
+			<key>Roll two the same</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Any Triple</key>
+			<string></string>
+			<key>Roll any 3 the same</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Three Dice Total</key>
+			<string></string>
+			<key>Roll specific total</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Combination</key>
+			<string></string>
+			<key>Roll specific numbers</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Single Dice Bet</key>
+			<string></string>
+			<key>Roll specific number</key>
+			<string></string>
+		</dict>
+	</array>
+</dict>
+</plist>
