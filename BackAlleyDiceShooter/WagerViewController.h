@@ -12,4 +12,6 @@
 
 @property (nonatomic, retain) NSArray *games;
 
+- (IBAction)donePressed:(id)sender;
+
 @end

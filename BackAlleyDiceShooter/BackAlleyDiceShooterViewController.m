@@ -22,23 +22,43 @@
 @synthesize dice;
 @synthesize tapGesture;
 
-- (CGPoint)generateRandomDieLocation
+- (BOOL)CGRectIntersectsDie:(CGRect)rect
+{
+    BOOL intersect;
+    
+    for (Die *d in dice) {
+        intersect = CGRectIntersectsRect(d.frame, rect);
+        
+        if(intersect)
+            return YES;
+    }
+    // no intersection was found.
+    return NO;
+}
+
+- (CGRect)generateRandomDieLocation
 {
     float x = arc4random() % GAMEBOARD_WIDTH;
     float y = (arc4random() % GAMEBOARD_HEIGHT) + 40;
     
-    return CGPointMake(x, y);
+    CGRect rect = CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
+    
+    while ([self CGRectIntersectsDie:rect]) {
+        float x = arc4random() % GAMEBOARD_WIDTH;
+        float y = (arc4random() % GAMEBOARD_HEIGHT) + 40;
+        
+        rect = CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
+    }
+    
+    return rect;
 }
-
 
 - (void)rollDice
 {
     for (Die *die in dice) {
         [die roll];
         
-        CGPoint loc = [self generateRandomDieLocation];
-        
-        die.frame = CGRectMake(loc.x, loc.y, SIZE_OF_DIE, SIZE_OF_DIE);
+        die.frame = [self generateRandomDieLocation];
     }
 }
 
