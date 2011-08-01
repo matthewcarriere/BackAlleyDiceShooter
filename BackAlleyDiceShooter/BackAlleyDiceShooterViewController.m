@@ -120,12 +120,13 @@
     
     // create dice for game.
     for (int i = 0; i < NUMBER_OF_DICE; i++) {        
-        die = [[Die alloc] initWithFrame:CGRectMake(arc4random() % GAMEBOARD_WIDTH, arc4random() % GAMEBOARD_HEIGHT, 50, 50)];
+        die = [[Die alloc] init];
         
         [dice addObject:die];
         
         [self.view addSubview:die];
     }
+    [self rollDice];
 }
 
 - (void)viewDidUnload
