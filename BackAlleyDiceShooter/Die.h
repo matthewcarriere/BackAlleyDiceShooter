@@ -10,7 +10,7 @@
 
 #define NUMBER_OF_SIDES 6
 
-@interface Die : UILabel
+@interface Die : UIView
 {
     int currentValue;
 }
