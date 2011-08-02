@@ -5,64 +5,64 @@
 	<key>Games</key>
 	<array>
 		<dict>
-			<key>Big</key>
-			<string></string>
-			<key>Roll between 11 and 17</key>
-			<string></string>
+			<key>Name</key>
+			<string>Big</string>
+			<key>Description</key>
+			<string>Roll between 1 and 1</string>
 		</dict>
 		<dict>
-			<key>Small</key>
-			<string></string>
-			<key>Roll between 4 and 10</key>
-			<string></string>
+			<key>Name</key>
+			<string>Small</string>
+			<key>Description</key>
+			<string>Roll between 4 and 10</string>
 		</dict>
 		<dict>
-			<key>Odd</key>
-			<string></string>
-			<key>Roll odd</key>
-			<string></string>
+			<key>Name</key>
+			<string>Odd</string>
+			<key>Description</key>
+			<string>Roll Odd</string>
 		</dict>
 		<dict>
-			<key>Even</key>
-			<string></string>
-			<key>Roll even</key>
-			<string></string>
+			<key>Name</key>
+			<string>Even</string>
+			<key>Description</key>
+			<string>Roll even</string>
 		</dict>
 		<dict>
-			<key>Triple</key>
-			<string></string>
-			<key>Roll 3 the same</key>
-			<string></string>
+			<key>Name</key>
+			<string>Triple</string>
+			<key>Description</key>
+			<string>Roll 3 the same</string>
 		</dict>
 		<dict>
-			<key>Double</key>
-			<string></string>
-			<key>Roll two the same</key>
-			<string></string>
+			<key>Name</key>
+			<string>Double</string>
+			<key>Description</key>
+			<string>Roll two the same</string>
 		</dict>
 		<dict>
-			<key>Any Triple</key>
-			<string></string>
-			<key>Roll any 3 the same</key>
-			<string></string>
+			<key>Name</key>
+			<string>Any Triple</string>
+			<key>Description</key>
+			<string>Roll any 3 the same</string>
 		</dict>
 		<dict>
-			<key>Three Dice Total</key>
-			<string></string>
-			<key>Roll specific total</key>
-			<string></string>
+			<key>Name</key>
+			<string>Three Dice Total</string>
+			<key>Description</key>
+			<string>Roll specific total</string>
 		</dict>
 		<dict>
-			<key>Combination</key>
-			<string></string>
-			<key>Roll specific numbers</key>
-			<string></string>
+			<key>Name</key>
+			<string>Combination</string>
+			<key>Description</key>
+			<string>Roll specific numbers</string>
 		</dict>
 		<dict>
-			<key>Single Dice Bet</key>
-			<string></string>
-			<key>Roll specific number</key>
-			<string></string>
+			<key>Name</key>
+			<string>Single Dice Bet</string>
+			<key>Description</key>
+			<string>Roll specific number</string>
 		</dict>
 	</array>
 </dict>

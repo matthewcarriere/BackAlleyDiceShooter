@@ -14,6 +14,14 @@
 
 @synthesize games;
 
+- (NSString *)gamesFilePath
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"Games" ofType:@"plist"];
+    
+    return path;
+}
+
 - (IBAction)donePressed:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
@@ -50,7 +58,11 @@
 {
     [super viewDidLoad];
     
-    games = [[NSArray alloc] initWithObjects:@"Big", @"Small", @"Odd", @"Even", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:[self gamesFilePath]];
+    games = [[NSArray alloc] initWithArray:[dict objectForKey:@"Games"]];
+    
+    NSLog(@"%@", [self gamesFilePath]);
+    NSLog(@"%d", [games count]);
 }
 
 - (void)viewDidUnload
@@ -79,8 +91,11 @@
     WagerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WagerCell"];
     
     // use key value coding to have this happen automagically when a model is assigned?
-    cell.name.text = [NSString stringWithFormat:@"a name"];
-    cell.description.text = [NSString stringWithFormat:@"its awesome"];
+    
+    NSDictionary *game = [games objectAtIndex:[indexPath row]];
+    
+    cell.name.text = [game objectForKey:@"Name"];
+    cell.description.text = [game objectForKey:@"Description"];
     
     return cell;
 }
