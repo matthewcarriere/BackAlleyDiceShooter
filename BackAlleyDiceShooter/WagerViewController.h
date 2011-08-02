@@ -15,5 +15,6 @@
 @property (nonatomic, retain) IBOutlet UISlider *wagerSlider;
 
 - (IBAction)sliderChanged:(id)sender;
+- (IBAction)donePressed:(id)sender;
 
 @end

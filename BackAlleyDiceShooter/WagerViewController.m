@@ -21,6 +21,11 @@
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d",[wager intValue]];
 }
 
+- (IBAction)donePressed:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
