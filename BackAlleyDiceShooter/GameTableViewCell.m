@@ -6,9 +6,9 @@
 //  Copyright 2011 Black Ninja Software. All rights reserved.
 //
 
-#import "WagerTableViewCell.h"
+#import "GameTableViewCell.h"
 
-@implementation WagerTableViewCell
+@implementation GameTableViewCell
 
 @synthesize name;
 @synthesize description;

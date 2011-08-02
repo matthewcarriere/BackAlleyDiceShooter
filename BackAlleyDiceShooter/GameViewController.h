@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WagerViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GameViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) NSArray *games;
 

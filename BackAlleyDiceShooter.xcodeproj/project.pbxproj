@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		341B512013DA91DD00272018 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341B511F13DA91DD00272018 /* Games.plist */; };
-		3482122113D66310006CA6BD /* WagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* WagerViewController.m */; };
-		3491537E13D94AEC00497441 /* WagerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491537D13D94AEC00497441 /* WagerTableViewCell.m */; };
+		3482122113D66310006CA6BD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* GameViewController.m */; };
+		3491537E13D94AEC00497441 /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491537D13D94AEC00497441 /* GameTableViewCell.m */; };
 		34C716C213D22AB500DBB7C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C113D22AB500DBB7C6 /* UIKit.framework */; };
 		34C716C413D22AB500DBB7C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C313D22AB500DBB7C6 /* Foundation.framework */; };
 		34C716C613D22AB500DBB7C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C513D22AB500DBB7C6 /* CoreGraphics.framework */; };
@@ -43,10 +43,10 @@
 
 /* Begin PBXFileReference section */
 		341B511F13DA91DD00272018 /* Games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Games.plist; sourceTree = "<group>"; };
-		3482121F13D66310006CA6BD /* WagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WagerViewController.h; sourceTree = "<group>"; };
-		3482122013D66310006CA6BD /* WagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WagerViewController.m; sourceTree = "<group>"; };
-		3491537C13D94AEC00497441 /* WagerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WagerTableViewCell.h; sourceTree = "<group>"; };
-		3491537D13D94AEC00497441 /* WagerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WagerTableViewCell.m; sourceTree = "<group>"; };
+		3482121F13D66310006CA6BD /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		3482122013D66310006CA6BD /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		3491537C13D94AEC00497441 /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
+		3491537D13D94AEC00497441 /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
 		34C716BD13D22AB500DBB7C6 /* BackAlleyDiceShooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackAlleyDiceShooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C716C113D22AB500DBB7C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		34C716C313D22AB500DBB7C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,13 +132,13 @@
 		34C716C713D22AB500DBB7C6 /* BackAlleyDiceShooter */ = {
 			isa = PBXGroup;
 			children = (
-				3482121F13D66310006CA6BD /* WagerViewController.h */,
-				3482122013D66310006CA6BD /* WagerViewController.m */,
+				3482121F13D66310006CA6BD /* GameViewController.h */,
+				3482122013D66310006CA6BD /* GameViewController.m */,
 				34C716D013D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.h */,
 				34C716D113D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m */,
 				34C716D313D22AB500DBB7C6 /* MainStoryboard.storyboard */,
-				3491537C13D94AEC00497441 /* WagerTableViewCell.h */,
-				3491537D13D94AEC00497441 /* WagerTableViewCell.m */,
+				3491537C13D94AEC00497441 /* GameTableViewCell.h */,
+				3491537D13D94AEC00497441 /* GameTableViewCell.m */,
 				34C716D613D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h */,
 				34C716D813D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m */,
 				34C716C813D22AB500DBB7C6 /* Supporting Files */,
@@ -298,8 +298,8 @@
 				34C716D913D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m in Sources */,
 				34C716FB13D22B6000DBB7C6 /* Die.m in Sources */,
 				34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */,
-				3482122113D66310006CA6BD /* WagerViewController.m in Sources */,
-				3491537E13D94AEC00497441 /* WagerTableViewCell.m in Sources */,
+				3482122113D66310006CA6BD /* GameViewController.m in Sources */,
+				3491537E13D94AEC00497441 /* GameTableViewCell.m in Sources */,
 				34D3058A13DA85B700527CC3 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

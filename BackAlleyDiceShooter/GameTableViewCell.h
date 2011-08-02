@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WagerTableViewCell : UITableViewCell
+@interface GameTableViewCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UILabel *name;
 @property (nonatomic, retain) IBOutlet UILabel *description;

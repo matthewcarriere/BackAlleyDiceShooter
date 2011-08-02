@@ -6,11 +6,11 @@
 //  Copyright 2011 Black Ninja Software. All rights reserved.
 //
 
-#import "WagerViewController.h"
-#import "WagerTableViewCell.h"
+#import "GameViewController.h"
+#import "GameTableViewCell.h"
 #import "Game.h"
 
-@implementation WagerViewController
+@implementation GameViewController
 
 @synthesize games;
 
@@ -88,7 +88,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WagerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WagerCell"];
+    GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameCell"];
     
     // use key value coding to have this happen automagically when a model is assigned?
     
