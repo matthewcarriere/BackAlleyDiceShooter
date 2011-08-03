@@ -6,68 +6,32 @@
 //  Copyright 2011 Black Ninja Software. All rights reserved.
 //
 
-#import "BackAlleyDiceShooterViewController.h"
+#import "GameBoardViewController.h"
+#import "GameEngine.h"
 #import "Die.h"
 
 #define NUMBER_OF_DICE  3
-#define STARTING_FUNDS  200.00
 #define SIZE_OF_DIE     50
 #define PADDING         10
 #define GAMEBOARD_WIDTH (320 - 50)
 #define GAMEBOARD_HEIGHT (420 - 50) // height of score display removed.
 
-@implementation BackAlleyDiceShooterViewController
+@implementation GameBoardViewController
 
 @synthesize funds;
-@synthesize dice;
+@synthesize wager;
 @synthesize tapGesture;
-
-- (BOOL)CGRectIntersectsDie:(CGRect)rect
-{
-    BOOL intersect;
-    
-    for (Die *d in dice) {
-        intersect = CGRectIntersectsRect(d.frame, rect);
-        
-        if(intersect)
-            return YES;
-    }
-    // no intersection was found.
-    return NO;
-}
-
-- (CGRect)generateRandomDieLocation
-{
-    float x = arc4random() % GAMEBOARD_WIDTH;
-    float y = (arc4random() % GAMEBOARD_HEIGHT) + 40;
-    
-    CGRect rect = CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
-    
-    while ([self CGRectIntersectsDie:rect]) {
-        float x = arc4random() % GAMEBOARD_WIDTH;
-        float y = (arc4random() % GAMEBOARD_HEIGHT) + 40;
-        
-        rect = CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
-    }
-    
-    return rect;
-}
 
 - (void)rollDice
 {
-    for (Die *die in dice) {
-        [die roll];
-        
-        die.frame = [self generateRandomDieLocation];
-    }
+    [engine rollDice];
+    
+    funds.text = [NSString stringWithFormat:@"%d", [engine funds]];
+    wager.text = [NSString stringWithFormat:@"%d", [engine wager]];
 }
 
 - (IBAction)rollButtonPressed:(id)sender
 {
-    for (Die *die in dice) {
-        [die roll];
-    }
-    
     // if score is between 11 and 17, but not a triple then BIG
     
     // if score is between 4 and 10, but not a triple then SMALL
@@ -93,11 +57,6 @@
     // 10 or 11
 }
 
-- (BOOL)isBig
-{
-    return NO;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -111,21 +70,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    dice = [[NSMutableArray alloc] init];
+    // Get the shared GameEngine instance
+    engine = [GameEngine sharedInstance];
     
-    // set initial funds.
-    [funds setText:[NSString stringWithFormat:@"%0.2f", STARTING_FUNDS]];
-    
-    Die *die;
-    
-    // create dice for game.
-    for (int i = 0; i < NUMBER_OF_DICE; i++) {        
-        die = [[Die alloc] init];
-        
-        [dice addObject:die];
-        
+    // add dice to gameboard
+    for (Die *die in [engine dice]) {
         [self.view addSubview:die];
     }
+    
     [self rollDice];
 }
 
@@ -139,6 +91,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    funds.text = [NSString stringWithFormat:@"%d", [engine funds]];
+    wager.text = [NSString stringWithFormat:@"%d", [engine wager]];
 }
 
 - (void)viewDidAppear:(BOOL)animated

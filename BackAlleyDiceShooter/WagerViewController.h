@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WagerViewController : UIViewController
+@class GameEngine;
+
+@interface WagerViewController : UIViewController {
+    GameEngine *engine;
+    NSNumber *currentFunds;
+}
 
 @property (nonatomic, retain) IBOutlet UILabel *dealerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *wagerLabel;

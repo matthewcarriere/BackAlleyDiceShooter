@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define NUMBER_OF_SIDES 6
-
 @interface Die : UIView
 {
     int currentValue;

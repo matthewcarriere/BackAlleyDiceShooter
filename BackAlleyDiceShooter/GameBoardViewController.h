@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class Die;
+@class GameEngine;
 
-@interface BackAlleyDiceShooterViewController : UIViewController
+@interface GameBoardViewController : UIViewController {
+    GameEngine *engine;
+}
 
 @property (nonatomic, retain) IBOutlet UILabel *funds;
-@property (nonatomic, retain) NSMutableArray *dice;
+@property (nonatomic, retain) IBOutlet UILabel *wager;
 @property (nonatomic, retain) IBOutlet UITapGestureRecognizer *tapGesture;
 
 @end

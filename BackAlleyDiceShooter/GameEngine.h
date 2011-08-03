@@ -12,6 +12,12 @@
 
 @property (nonatomic, retain) NSMutableArray *rolls;
 
++ (GameEngine *)sharedInstance;
+- (void)rollDice;
+- (NSArray *)dice;
+- (int)funds;
+- (int)wager;
+- (void)setWager:(int)wager;
 - (BOOL)isBig;
 - (BOOL)isSmall;
 - (BOOL)isOdd;

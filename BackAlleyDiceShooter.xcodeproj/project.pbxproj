@@ -18,8 +18,8 @@
 		34C716CE13D22AB500DBB7C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716CD13D22AB500DBB7C6 /* main.m */; };
 		34C716D213D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716D113D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m */; };
 		34C716D513D22AB500DBB7C6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C716D313D22AB500DBB7C6 /* MainStoryboard.storyboard */; };
-		34C716D713D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 34C716D613D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h */; };
-		34C716D913D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716D813D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m */; };
+		34C716D713D22AB500DBB7C6 /* GameBoardViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 34C716D613D22AB500DBB7C6 /* GameBoardViewController.h */; };
+		34C716D913D22AB500DBB7C6 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716D813D22AB500DBB7C6 /* GameBoardViewController.m */; };
 		34C716E113D22AB500DBB7C6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716E013D22AB500DBB7C6 /* SenTestingKit.framework */; };
 		34C716E213D22AB500DBB7C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C113D22AB500DBB7C6 /* UIKit.framework */; };
 		34C716E313D22AB500DBB7C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C313D22AB500DBB7C6 /* Foundation.framework */; };
@@ -61,8 +61,8 @@
 		34C716D013D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackAlleyDiceShooterAppDelegate.h; sourceTree = "<group>"; };
 		34C716D113D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackAlleyDiceShooterAppDelegate.m; sourceTree = "<group>"; };
 		34C716D413D22AB500DBB7C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		34C716D613D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackAlleyDiceShooterViewController.h; sourceTree = "<group>"; };
-		34C716D813D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackAlleyDiceShooterViewController.m; sourceTree = "<group>"; };
+		34C716D613D22AB500DBB7C6 /* GameBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameBoardViewController.h; sourceTree = "<group>"; };
+		34C716D813D22AB500DBB7C6 /* GameBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		34C716DF13D22AB500DBB7C6 /* BackAlleyDiceShooterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackAlleyDiceShooterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C716E013D22AB500DBB7C6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		34C716E913D22AB500DBB7C6 /* BackAlleyDiceShooterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackAlleyDiceShooterTests-Info.plist"; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 				34C716D313D22AB500DBB7C6 /* MainStoryboard.storyboard */,
 				3491537C13D94AEC00497441 /* GameTableViewCell.h */,
 				3491537D13D94AEC00497441 /* GameTableViewCell.m */,
-				34C716D613D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h */,
-				34C716D813D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m */,
+				34C716D613D22AB500DBB7C6 /* GameBoardViewController.h */,
+				34C716D813D22AB500DBB7C6 /* GameBoardViewController.m */,
 				34C716C813D22AB500DBB7C6 /* Supporting Files */,
 				34C716F913D22B6000DBB7C6 /* Die.h */,
 				34C716FA13D22B6000DBB7C6 /* Die.m */,
@@ -261,7 +261,7 @@
 			files = (
 				34C716CC13D22AB500DBB7C6 /* InfoPlist.strings in Resources */,
 				34C716D513D22AB500DBB7C6 /* MainStoryboard.storyboard in Resources */,
-				34C716D713D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.h in Resources */,
+				34C716D713D22AB500DBB7C6 /* GameBoardViewController.h in Resources */,
 				341B512013DA91DD00272018 /* Games.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +300,7 @@
 			files = (
 				34C716CE13D22AB500DBB7C6 /* main.m in Sources */,
 				34C716D213D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m in Sources */,
-				34C716D913D22AB500DBB7C6 /* BackAlleyDiceShooterViewController.m in Sources */,
+				34C716D913D22AB500DBB7C6 /* GameBoardViewController.m in Sources */,
 				34C716FB13D22B6000DBB7C6 /* Die.m in Sources */,
 				34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */,
 				3482122113D66310006CA6BD /* GameViewController.m in Sources */,

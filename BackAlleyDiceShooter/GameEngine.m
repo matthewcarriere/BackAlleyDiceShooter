@@ -7,10 +7,88 @@
 //
 
 #import "GameEngine.h"
+#import "Die.h"
+
+#define NUMBER_OF_DICE  3
+#define STARTING_FUNDS  200
+#define SIZE_OF_DIE     50
+#define PADDING         10
+#define GAMEBOARD_WIDTH (320 - 50)
+#define GAMEBOARD_HEIGHT (420 - 50) // height of score display removed.
 
 @implementation GameEngine
 
+static GameEngine *sharedInstance;
+static NSMutableArray *dice;
+static int funds;
+static int wager;
+
 @synthesize rolls;
+
+#pragma mark -
+#pragma mark Singleton Methods
+
++ (GameEngine *)sharedInstance
+{
+    if (sharedInstance == nil) {
+        sharedInstance = [[super allocWithZone:NULL] init];
+        
+        funds = STARTING_FUNDS;
+        wager = (funds * 0.10);
+        dice = [[NSMutableArray alloc] init];
+        
+        Die *die;
+        
+        for (int i = 0; i < NUMBER_OF_DICE; i++) {        
+            die = [[Die alloc] init];
+            [dice addObject:die];
+        }
+    }
+    return sharedInstance;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+    return [self sharedInstance];
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
+#pragma mark -
+#pragma mark Instance Methods
+
+- (int)funds
+{
+    return funds;
+}
+
+- (int)wager
+{
+    return wager;
+}
+
+- (void)setWager:(int)wager
+{
+    self.wager = wager;
+}
+
+- (void)rollDice
+{    
+    for (Die *die in dice) {
+        [die roll];
+    }
+    
+    funds -= 20;
+    wager = (funds * 0.10);
+}
+
+- (NSMutableArray *)dice
+{
+    return dice;
+}
 
 - (int)score
 {
@@ -307,17 +385,6 @@
     else {
         return NO;
     }
-}
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-        rolls = [[NSMutableArray alloc] init];
-    }
-    
-    return self;
 }
 
 @end
