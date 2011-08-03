@@ -15,9 +15,9 @@
 + (GameEngine *)sharedInstance;
 - (void)rollDice;
 - (NSArray *)dice;
-- (int)funds;
-- (int)wager;
-- (void)setWager:(int)wager;
+- (float)funds;
+- (float)wager;
+- (void)setWager:(float)wager;
 - (BOOL)isBig;
 - (BOOL)isSmall;
 - (BOOL)isOdd;

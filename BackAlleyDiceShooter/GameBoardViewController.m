@@ -22,12 +22,20 @@
 @synthesize wager;
 @synthesize tapGesture;
 
+- (void)updateFundsAndWager
+{
+    int currentFunds = [[NSNumber numberWithFloat:[engine funds]] intValue];
+    int currentWager = [[NSNumber numberWithFloat:[engine wager]] intValue];
+    
+    funds.text = [NSString stringWithFormat:@"%d", currentFunds];
+    wager.text = [NSString stringWithFormat:@"%d", currentWager];
+}
+
 - (void)rollDice
 {
     [engine rollDice];
     
-    funds.text = [NSString stringWithFormat:@"%d", [engine funds]];
-    wager.text = [NSString stringWithFormat:@"%d", [engine wager]];
+    [self updateFundsAndWager];
 }
 
 - (IBAction)rollButtonPressed:(id)sender
@@ -92,8 +100,7 @@
 {
     [super viewWillAppear:animated];
     
-    funds.text = [NSString stringWithFormat:@"%d", [engine funds]];
-    wager.text = [NSString stringWithFormat:@"%d", [engine wager]];
+    [self updateFundsAndWager];
 }
 
 - (void)viewDidAppear:(BOOL)animated

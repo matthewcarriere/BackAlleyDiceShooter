@@ -12,7 +12,6 @@
 
 @interface WagerViewController : UIViewController {
     GameEngine *engine;
-    NSNumber *currentFunds;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *dealerLabel;

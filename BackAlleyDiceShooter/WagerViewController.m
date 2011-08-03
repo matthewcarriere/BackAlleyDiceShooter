@@ -25,6 +25,7 @@
 - (IBAction)donePressed:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+    [engine setWager:self.wagerSlider.value];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,14 +61,14 @@
     
     engine = [GameEngine sharedInstance];
     
-    currentFunds = [NSNumber numberWithFloat:[engine funds]];
-    int initial_bet = ([currentFunds intValue] * .10);
+    int funds = [[NSNumber numberWithFloat:[engine funds]] intValue];
+    int wager = [[NSNumber numberWithFloat:[engine wager]] intValue];
     
     self.wagerSlider.minimumValue = 1;
-    self.wagerSlider.maximumValue = [currentFunds intValue];
-    self.wagerSlider.value = initial_bet;
+    self.wagerSlider.maximumValue = funds;
+    self.wagerSlider.value = wager;
     
-    self.wagerLabel.text = [NSString stringWithFormat:@"$%d", initial_bet];
+    self.wagerLabel.text = [NSString stringWithFormat:@"$%d", wager];
 }
 
 - (void)viewDidUnload

@@ -10,7 +10,7 @@
 #import "Die.h"
 
 #define NUMBER_OF_DICE  3
-#define STARTING_FUNDS  200
+#define STARTING_FUNDS  200.00
 #define SIZE_OF_DIE     50
 #define PADDING         10
 #define GAMEBOARD_WIDTH (320 - 50)
@@ -20,8 +20,8 @@
 
 static GameEngine *sharedInstance;
 static NSMutableArray *dice;
-static int funds;
-static int wager;
+static float funds;
+static float wager;
 
 @synthesize rolls;
 
@@ -34,7 +34,7 @@ static int wager;
         sharedInstance = [[super allocWithZone:NULL] init];
         
         funds = STARTING_FUNDS;
-        wager = (funds * 0.10);
+        wager = (STARTING_FUNDS * 0.10);
         dice = [[NSMutableArray alloc] init];
         
         Die *die;
@@ -60,19 +60,19 @@ static int wager;
 #pragma mark -
 #pragma mark Instance Methods
 
-- (int)funds
+- (float)funds
 {
     return funds;
 }
 
-- (int)wager
+- (float)wager
 {
     return wager;
 }
 
-- (void)setWager:(int)wager
+- (void)setWager:(float)newWager
 {
-    self.wager = wager;
+    wager = (newWager + 0.5f);
 }
 
 - (void)rollDice
