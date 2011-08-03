@@ -10,9 +10,10 @@
 
 @interface GameEngine : NSObject
 
-@property (nonatomic, retain) NSMutableArray *rolls;
-
 + (GameEngine *)sharedInstance;
+- (BOOL)isWin;
+- (NSDictionary *)selectedGame;
+- (void)setSelectedGame:(NSDictionary *)game;
 - (void)rollDice;
 - (NSArray *)dice;
 - (float)funds;

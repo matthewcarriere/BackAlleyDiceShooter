@@ -9,10 +9,23 @@
 #import "GameViewController.h"
 #import "GameTableViewCell.h"
 #import "Game.h"
+#import "WagerViewController.h"
 
 @implementation GameViewController
 
 @synthesize games;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SelectWager"]) {
+        WagerViewController *wagerViewController = [segue destinationViewController];
+        
+        NSInteger row = [[self.tableView indexPathForSelectedRow] row];
+        NSDictionary *game = [games objectAtIndex:row];
+        
+        wagerViewController.selectedGame = game;
+    }
+}
 
 - (NSString *)gamesFilePath
 {

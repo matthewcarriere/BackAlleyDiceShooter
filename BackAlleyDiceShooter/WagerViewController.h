@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *dealerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *wagerLabel;
 @property (nonatomic, retain) IBOutlet UISlider *wagerSlider;
+@property (nonatomic, retain) NSDictionary *selectedGame;
 
 - (IBAction)sliderChanged:(id)sender;
 - (IBAction)donePressed:(id)sender;

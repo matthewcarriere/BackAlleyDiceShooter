@@ -9,35 +9,53 @@
 #import "GameBoardViewController.h"
 #import "GameEngine.h"
 #import "Die.h"
+#import "GameViewController.h"
 
-#define NUMBER_OF_DICE  3
-#define SIZE_OF_DIE     50
-#define PADDING         10
-#define GAMEBOARD_WIDTH (320 - 50)
-#define GAMEBOARD_HEIGHT (420 - 50) // height of score display removed.
+#define NO_MONEY 0
 
 @implementation GameBoardViewController
 
 @synthesize funds;
 @synthesize wager;
 @synthesize tapGesture;
+@synthesize message;
+@synthesize selectedGameDesriptionLabel;
 
-- (void)updateFundsAndWager
-{
-    // TODO: calculate winnings/losses
-    
+- (void)updateGameBoard
+{    
     int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
     int currentWager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
     funds.text = [NSString stringWithFormat:@"%d", currentFunds];
     wager.text = [NSString stringWithFormat:@"%d", currentWager];
+    
+    NSString *selectedGameDescription = [[engine selectedGame] objectForKey:@"Description"];
+    
+    if (selectedGameDescription != nil) {
+        selectedGameDesriptionLabel.text = [NSString stringWithFormat:@"%@", selectedGameDescription];
+        message.text = @"Shake to roll dice!";
+    }
 }
 
 - (void)rollDice
 {
-    [engine rollDice];
+    int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
+    int currentWager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
-    [self updateFundsAndWager];
+    if (currentFunds == NO_MONEY) {
+        message.text = @"You are broke.";
+    }
+    else if (currentFunds >= currentWager) {
+        [engine rollDice];
+        [self updateGameBoard];
+        
+        if ([engine isWin]) {
+            message.text = @"You won!";
+        }
+    }
+    else {
+        message.text = @"You can't cover your bet!";
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +93,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self updateFundsAndWager];
+    [self updateGameBoard];
 }
 
 - (void)viewDidAppear:(BOOL)animated

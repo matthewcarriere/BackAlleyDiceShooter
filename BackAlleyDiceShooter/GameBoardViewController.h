@@ -17,5 +17,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *funds;
 @property (nonatomic, retain) IBOutlet UILabel *wager;
 @property (nonatomic, retain) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (nonatomic, retain) IBOutlet UILabel *message;
+@property (nonatomic, retain) IBOutlet UILabel *selectedGameDesriptionLabel;
 
 @end

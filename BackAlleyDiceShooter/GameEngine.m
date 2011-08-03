@@ -9,12 +9,25 @@
 #import "GameEngine.h"
 #import "Die.h"
 
-#define NUMBER_OF_DICE  3
-#define STARTING_FUNDS  200.00
-#define SIZE_OF_DIE     50
-#define PADDING         10
-#define GAMEBOARD_WIDTH (320 - 50)
-#define GAMEBOARD_HEIGHT (420 - 50) // height of score display removed.
+#define NUMBER_OF_DICE      3
+#define STARTING_FUNDS      200.00
+#define STARTING_WAGER      0.00
+#define SIZE_OF_DIE         50
+#define PADDING             10
+#define GAMEBOARD_WIDTH     (320 - 50)
+#define GAMEBOARD_HEIGHT    (420 - 50) // height of score display removed.
+
+// Games
+#define BIG                 1
+#define SMALL               2
+#define ODD                 3
+#define EVEN                4
+#define TRIPLE              5
+#define DOUBLE              6
+#define ANY_TRIPLE          7
+#define THREE_DICE_TOTAL    8
+#define COMBINATION         9
+#define SINGLE_DICE_BET     10
 
 @implementation GameEngine
 
@@ -22,8 +35,9 @@ static GameEngine *sharedInstance;
 static NSMutableArray *dice;
 static float funds;
 static float wager;
-
-@synthesize rolls;
+static NSDictionary *selectedGame;
+static BOOL isWin;
+static NSMutableArray *rolls;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -34,8 +48,9 @@ static float wager;
         sharedInstance = [[super allocWithZone:NULL] init];
         
         funds = STARTING_FUNDS;
-        wager = (STARTING_FUNDS * 0.10);
-        dice = [[NSMutableArray alloc] init];
+        wager = STARTING_WAGER;
+        dice = [[NSMutableArray alloc] initWithCapacity:NUMBER_OF_DICE];
+        rolls = [[NSMutableArray alloc] initWithCapacity:NUMBER_OF_DICE];
         
         Die *die;
         
@@ -58,7 +73,31 @@ static float wager;
 }
 
 #pragma mark -
+#pragma mark Test Methods
+
+- (void)setRolls:(NSMutableArray *)staticRolls
+{
+    // sets the rolls to a specific set of values so that the win conditions can be tested.
+    rolls = staticRolls;
+}
+
+#pragma mark -
 #pragma mark Instance Methods
+
+- (BOOL)isWin
+{
+    return isWin;
+}
+
+- (NSDictionary *)selectedGame
+{
+    return selectedGame;
+}
+
+- (void)setSelectedGame:(NSDictionary *)game
+{
+    selectedGame = game;
+}
 
 - (float)funds
 {
@@ -77,12 +116,55 @@ static float wager;
 
 - (void)rollDice
 {    
+    [rolls removeAllObjects];
+    
+    int roll;
     for (Die *die in dice) {
-        [die roll];
+        roll = [die roll];
+        [rolls addObject:[NSNumber numberWithInt:roll]];
     }
     
-    // TODO: use the game engine to correctly award/subtract funds.
-    funds -= wager;
+    int selectedGameId = [[selectedGame objectForKey:@"Id"] intValue];
+    isWin = NO;
+    
+    switch (selectedGameId) {
+        case BIG:
+            isWin = [self isBig];
+            break;
+        case SMALL:
+            isWin = [self isSmall];
+            break;
+        case ODD:
+            isWin = [self isOdd];
+            break;
+        case EVEN:
+            isWin = [self isEven];
+            break;
+        case TRIPLE:
+            break;
+        case DOUBLE:
+            break;
+        case ANY_TRIPLE:
+            isWin = [self isTriple];
+            break;
+        case THREE_DICE_TOTAL:
+            break;
+        case COMBINATION:
+            break;
+        case SINGLE_DICE_BET:
+            break;
+            
+        default:
+            return; // no game selected.
+            break;
+    }
+    
+    if (isWin) {
+        funds += wager;
+    }
+    else {
+        funds -= wager;
+    }
 }
 
 - (NSMutableArray *)dice

@@ -11,9 +11,12 @@
 
 @implementation WagerViewController
 
+#define ZERO    0
+
 @synthesize dealerLabel;
 @synthesize wagerLabel;
 @synthesize wagerSlider;
+@synthesize selectedGame;
 
 - (IBAction)sliderChanged:(id)sender
 {
@@ -25,6 +28,7 @@
 - (IBAction)donePressed:(id)sender
 {
     [engine setWager:self.wagerSlider.value];
+    [engine setSelectedGame:selectedGame];
     
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -64,6 +68,11 @@
     
     int funds = [[NSNumber numberWithFloat:[engine funds]] intValue];
     int wager = [[NSNumber numberWithFloat:[engine wager]] intValue];
+    
+    if (wager == ZERO || wager > funds) {
+        // not enough money to cover the current bet, so use default.
+        wager = (funds * 0.10);
+    }
     
     self.wagerSlider.minimumValue = 1;
     self.wagerSlider.maximumValue = funds;
