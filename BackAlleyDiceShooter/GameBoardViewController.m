@@ -24,8 +24,8 @@
 
 - (void)updateFundsAndWager
 {
-    int currentFunds = [[NSNumber numberWithFloat:[engine funds]] intValue];
-    int currentWager = [[NSNumber numberWithFloat:[engine wager]] intValue];
+    int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
+    int currentWager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
     funds.text = [NSString stringWithFormat:@"%d", currentFunds];
     wager.text = [NSString stringWithFormat:@"%d", currentWager];

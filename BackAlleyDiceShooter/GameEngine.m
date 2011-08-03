@@ -72,7 +72,7 @@ static float wager;
 
 - (void)setWager:(float)newWager
 {
-    wager = (newWager + 0.5f);
+    wager = newWager;
 }
 
 - (void)rollDice
@@ -82,7 +82,7 @@ static float wager;
     }
     
     // TODO: use the game engine to correctly award/subtract funds.
-    funds = (funds + 0.5f) - wager;
+    funds -= wager;
 }
 
 - (NSMutableArray *)dice
