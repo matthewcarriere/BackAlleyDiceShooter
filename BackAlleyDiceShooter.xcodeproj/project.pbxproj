@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		341B512013DA91DD00272018 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341B511F13DA91DD00272018 /* Games.plist */; };
+		345D8DFD13E91D4700B0EF11 /* gameboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 345D8DFB13E91D4700B0EF11 /* gameboard.png */; };
+		345D8DFE13E91D4700B0EF11 /* gameboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */; };
 		3482122113D66310006CA6BD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* GameViewController.m */; };
 		3491537E13D94AEC00497441 /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491537D13D94AEC00497441 /* GameTableViewCell.m */; };
 		34A24D2C13E7D775005979F3 /* WagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A24D2B13E7D775005979F3 /* WagerViewController.m */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		341B511F13DA91DD00272018 /* Games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Games.plist; sourceTree = "<group>"; };
+		345D8DFB13E91D4700B0EF11 /* gameboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameboard.png; sourceTree = "<group>"; };
+		345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameboard@2x.png"; sourceTree = "<group>"; };
 		3482121F13D66310006CA6BD /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3482122013D66310006CA6BD /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3491537C13D94AEC00497441 /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		34C716C713D22AB500DBB7C6 /* BackAlleyDiceShooter */ = {
 			isa = PBXGroup;
 			children = (
+				345D8DFB13E91D4700B0EF11 /* gameboard.png */,
+				345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */,
 				3482121F13D66310006CA6BD /* GameViewController.h */,
 				3482122013D66310006CA6BD /* GameViewController.m */,
 				34C716D013D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.h */,
@@ -263,6 +269,8 @@
 				34C716D513D22AB500DBB7C6 /* MainStoryboard.storyboard in Resources */,
 				34C716D713D22AB500DBB7C6 /* GameBoardViewController.h in Resources */,
 				341B512013DA91DD00272018 /* Games.plist in Resources */,
+				345D8DFD13E91D4700B0EF11 /* gameboard.png in Resources */,
+				345D8DFE13E91D4700B0EF11 /* gameboard@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
