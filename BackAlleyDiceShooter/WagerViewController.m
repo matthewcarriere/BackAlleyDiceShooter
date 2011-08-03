@@ -24,8 +24,9 @@
 
 - (IBAction)donePressed:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
     [engine setWager:self.wagerSlider.value];
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

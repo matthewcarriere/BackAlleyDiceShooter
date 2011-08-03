@@ -81,8 +81,8 @@ static float wager;
         [die roll];
     }
     
-    funds -= 20;
-    wager = (funds * 0.10);
+    // TODO: use the game engine to correctly award/subtract funds.
+    funds = (funds + 0.5f) - wager;
 }
 
 - (NSMutableArray *)dice
