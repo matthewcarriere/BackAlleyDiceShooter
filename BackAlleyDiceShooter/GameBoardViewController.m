@@ -24,6 +24,8 @@
 
 - (void)updateFundsAndWager
 {
+    // TODO: calculate winnings/losses
+    
     int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
     int currentWager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
@@ -36,33 +38,6 @@
     [engine rollDice];
     
     [self updateFundsAndWager];
-}
-
-- (IBAction)rollButtonPressed:(id)sender
-{
-    // if score is between 11 and 17, but not a triple then BIG
-    
-    // if score is between 4 and 10, but not a triple then SMALL
-    
-    // if total score is an odd number, but not a triple then ODD
-    
-    // if total score is an even number, but not a triple then EVEN
-    
-    // a specific triple (three of a specific number)
-    
-    // a specific double, with the exception of a triple
-    
-    // any of the triples appear
-    
-    // three dice total...
-    
-    // 4 or 17
-    // 5 or 16
-    // 6 or 15
-    // 7 or 14
-    // 8 or 13
-    // 9 or 12
-    // 10 or 11
 }
 
 - (void)didReceiveMemoryWarning
