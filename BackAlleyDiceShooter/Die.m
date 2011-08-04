@@ -58,11 +58,21 @@
     return currentValue;
 }
 
+- (int)currentValue
+{
+    return currentValue;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    if (self.selected) {
+        CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    }
+    else {
+        CGContextSetFillColorWithColor(context, [[UIColor grayColor] CGColor]);
+    }
     CGContextFillRect(context, rect);
     
     CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);

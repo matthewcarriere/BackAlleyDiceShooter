@@ -38,6 +38,7 @@ static float wager;
 static NSDictionary *selectedGame;
 static BOOL isWin;
 static NSMutableArray *rolls;
+static NSArray *selectedRolls;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -56,6 +57,8 @@ static NSMutableArray *rolls;
         
         for (int i = 0; i < NUMBER_OF_DICE; i++) {        
             die = [[Die alloc] init];
+            // we want white dice on the gameboard.
+            die.selected = YES;
             [dice addObject:die];
         }
     }
@@ -83,6 +86,11 @@ static NSMutableArray *rolls;
 
 #pragma mark -
 #pragma mark Instance Methods
+
+- (void)setSelectedRolls:(NSArray *)rolls
+{
+    selectedRolls = rolls;
+}
 
 - (BOOL)isWin
 {
@@ -141,8 +149,10 @@ static NSMutableArray *rolls;
             isWin = [self isEven];
             break;
         case TRIPLE:
+            isWin = [self isSpecificTriple:[[selectedRolls objectAtIndex:0] intValue]];
             break;
         case DOUBLE:
+            isWin = [self isSpecificDouble:[[selectedRolls objectAtIndex:0] intValue]];
             break;
         case ANY_TRIPLE:
             isWin = [self isTriple];
@@ -150,8 +160,10 @@ static NSMutableArray *rolls;
         case THREE_DICE_TOTAL:
             break;
         case COMBINATION:
+            isWin = [self isCombinationOf:[[selectedRolls objectAtIndex:0] intValue] And:[[selectedRolls objectAtIndex:1] intValue]];
             break;
         case SINGLE_DICE_BET:
+            isWin = [self hasRoll:[[selectedRolls objectAtIndex:0] intValue]];
             break;
             
         default:

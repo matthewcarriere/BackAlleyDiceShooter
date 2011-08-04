@@ -26,6 +26,7 @@
 @synthesize wagerSlider;
 @synthesize selectedGame;
 @synthesize dice;
+@synthesize doneButton;
 
 - (CGRect)dieFrameFromIndex:(int)index
 {
@@ -62,8 +63,33 @@
         die = [[Die alloc] initWithRoll:i];
         die.frame = [self dieFrameFromIndex:i];
         
+        [die addTarget:self action:@selector(diePressed:) forControlEvents:UIControlEventTouchUpInside];
+        
         [dice addObject:die];
         [self.view addSubview:die];
+    }
+}
+
+- (IBAction)diePressed:(id)sender
+{
+    Die *die = (Die *)sender;
+    
+    if (die.selected) {
+        die.selected = NO;
+        selectedDice--;
+    }
+    // only allow as many dice to be selected as required by the game.
+    else if (selectedDice < [[selectedGame objectForKey:@"Select"] intValue]) {
+        die.selected = YES;
+        selectedDice++;
+    }
+    
+    // the required number of dice must be selected.
+    if (selectedDice == [[selectedGame objectForKey:@"Select"] intValue]) {
+        doneButton.enabled = YES;
+    }
+    else {
+        doneButton.enabled = NO;
     }
 }
 
@@ -78,6 +104,15 @@
 {
     [engine setWager:self.wagerSlider.value];
     [engine setSelectedGame:selectedGame];
+    
+    NSMutableArray *selectedRolls = [[NSMutableArray alloc] init];
+    for (Die *die in dice) {
+        if (die.selected) {
+            NSNumber *roll = [NSNumber numberWithInt:[die currentValue]];
+            [selectedRolls addObject:roll];
+        }
+    }
+    [engine setSelectedRolls:selectedRolls];
     
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -114,6 +149,7 @@
     [super viewDidLoad];
     
     engine = [GameEngine sharedInstance];
+    selectedDice = 0;
     
     int funds = [[NSNumber numberWithFloat:[engine funds]] intValue];
     int wager = [[NSNumber numberWithFloat:[engine wager]] intValue];
@@ -129,7 +165,13 @@
     
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d", wager];
     
-    [self drawDice];
+    // does the game require a selection of dice?
+    if ([[selectedGame objectForKey:@"Select"] intValue] > 0) {
+        [self drawDice];
+    }
+    else {
+        doneButton.enabled = YES;
+    }
 }
 
 - (void)viewDidUnload

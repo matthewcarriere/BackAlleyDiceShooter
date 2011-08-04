@@ -19,6 +19,7 @@
 - (float)funds;
 - (float)wager;
 - (void)setWager:(float)wager;
+- (void)setSelectedRolls:(NSArray *)rolls;
 - (BOOL)isBig;
 - (BOOL)isSmall;
 - (BOOL)isOdd;

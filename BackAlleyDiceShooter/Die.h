@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Die : UIView
+@interface Die : UIControl
 {
     int currentValue;
 }
 
 - (id)initWithRoll:(int)roll;
 - (int)roll;
+- (int)currentValue;
 
 @end
 
