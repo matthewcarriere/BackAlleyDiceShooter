@@ -171,8 +171,9 @@ static NSArray *selectedRolls;
             break;
     }
     
+    int payoutMultiplier = [[selectedGame objectForKey:@"Payout"] intValue];
     if (isWin) {
-        funds += wager;
+        funds += (wager * payoutMultiplier);
     }
     else {
         funds -= wager;

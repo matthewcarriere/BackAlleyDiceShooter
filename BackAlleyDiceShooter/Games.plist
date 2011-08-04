@@ -13,6 +13,8 @@
 			<string>Roll between 11 and 17</string>
             <key>Select</key>
 			<string>0</string>
+            <key>Payout</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -23,6 +25,8 @@
 			<string>Roll between 4 and 10</string>
             <key>Select</key>
 			<string>0</string>
+            <key>Payout</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -33,6 +37,8 @@
 			<string>Roll Odd</string>
             <key>Select</key>
 			<string>0</string>
+            <key>Payout</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -43,6 +49,8 @@
 			<string>Roll even</string>
             <key>Select</key>
 			<string>0</string>
+            <key>Payout</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -53,6 +61,8 @@
 			<string>Roll 3 the same</string>
             <key>Select</key>
 			<string>1</string>
+            <key>Payout</key>
+			<string>180</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -63,6 +73,8 @@
 			<string>Roll two the same</string>
             <key>Select</key>
 			<string>1</string>
+            <key>Payout</key>
+			<string>10</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -73,6 +85,8 @@
 			<string>Roll any 3 the same</string>
             <key>Select</key>
 			<string>0</string>
+            <key>Payout</key>
+			<string>30</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -81,6 +95,8 @@
 			<string>Three Dice Total</string>
 			<key>Description</key>
 			<string>Roll specific total</string>
+            <key>Payout</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -91,6 +107,8 @@
 			<string>Roll specific numbers</string>
             <key>Select</key>
 			<string>2</string>
+            <key>Payout</key>
+			<string>6</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -100,6 +118,8 @@
 			<key>Description</key>
 			<string>Roll specific number</string>
             <key>Select</key>
+			<string>1</string>
+            <key>Payout</key>
 			<string>1</string>
 		</dict>
 	</array>
