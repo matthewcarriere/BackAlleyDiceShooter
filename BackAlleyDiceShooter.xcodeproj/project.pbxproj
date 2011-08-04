@@ -31,7 +31,6 @@
 		34C716F013D22AB500DBB7C6 /* BackAlleyDiceShooterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716EF13D22AB500DBB7C6 /* BackAlleyDiceShooterTests.m */; };
 		34C716FB13D22B6000DBB7C6 /* Die.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C716FA13D22B6000DBB7C6 /* Die.m */; };
 		34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7170913D2E11E00DBB7C6 /* GameEngine.m */; };
-		34D3058A13DA85B700527CC3 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3058913DA85B700527CC3 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +76,6 @@
 		34C716FA13D22B6000DBB7C6 /* Die.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Die.m; sourceTree = "<group>"; };
 		34C7170813D2E11E00DBB7C6 /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
 		34C7170913D2E11E00DBB7C6 /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
-		34D3058813DA85B700527CC3 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		34D3058913DA85B700527CC3 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +152,6 @@
 				34C716FA13D22B6000DBB7C6 /* Die.m */,
 				34C7170813D2E11E00DBB7C6 /* GameEngine.h */,
 				34C7170913D2E11E00DBB7C6 /* GameEngine.m */,
-				34D3058813DA85B700527CC3 /* Game.h */,
-				34D3058913DA85B700527CC3 /* Game.m */,
 				341B511F13DA91DD00272018 /* Games.plist */,
 				34A24D2A13E7D775005979F3 /* WagerViewController.h */,
 				34A24D2B13E7D775005979F3 /* WagerViewController.m */,
@@ -313,7 +308,6 @@
 				34C7170A13D2E11E00DBB7C6 /* GameEngine.m in Sources */,
 				3482122113D66310006CA6BD /* GameViewController.m in Sources */,
 				3491537E13D94AEC00497441 /* GameTableViewCell.m in Sources */,
-				34D3058A13DA85B700527CC3 /* Game.m in Sources */,
 				34A24D2C13E7D775005979F3 /* WagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

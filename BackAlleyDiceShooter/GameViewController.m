@@ -8,7 +8,6 @@
 
 #import "GameViewController.h"
 #import "GameTableViewCell.h"
-#import "Game.h"
 #import "WagerViewController.h"
 
 @implementation GameViewController
