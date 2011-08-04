@@ -9,15 +9,7 @@
 #import "WagerViewController.h"
 #import "GameEngine.h"
 #import "Die.h"
-
-// TODO: consolidate constants.
-#define ZERO            0
-#define NUMBER_OF_DICE  6
-#define SIZE_OF_DIE     50
-#define FIRST_ROW       220
-#define SECOND_ROW      300
-#define PADDING         30
-#define DICE_PER_ROW    3
+#import "Constants.h"
 
 @implementation WagerViewController
 
@@ -59,7 +51,7 @@
     self.dice = [[NSMutableArray alloc] initWithCapacity:6];
     Die *die;
     
-    for (int i = 1; i <= NUMBER_OF_DICE; i++) {        
+    for (int i = 1; i <= ALL_DICE; i++) {        
         die = [[Die alloc] initWithRoll:i];
         die.frame = [self dieFrameFromIndex:i];
         

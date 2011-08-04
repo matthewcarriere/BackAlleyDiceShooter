@@ -10,8 +10,7 @@
 #import "GameEngine.h"
 #import "Die.h"
 #import "GameViewController.h"
-
-#define NO_MONEY 0
+#import "Constants.h"
 
 @implementation GameBoardViewController
 

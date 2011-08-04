@@ -8,26 +8,7 @@
 
 #import "GameEngine.h"
 #import "Die.h"
-
-#define NUMBER_OF_DICE      3
-#define STARTING_FUNDS      200.00
-#define STARTING_WAGER      0.00
-#define SIZE_OF_DIE         50
-#define PADDING             10
-#define GAMEBOARD_WIDTH     (320 - 50)
-#define GAMEBOARD_HEIGHT    (420 - 50) // height of score display removed.
-
-// Games
-#define BIG                 1
-#define SMALL               2
-#define ODD                 3
-#define EVEN                4
-#define TRIPLE              5
-#define DOUBLE              6
-#define ANY_TRIPLE          7
-#define THREE_DICE_TOTAL    8
-#define COMBINATION         9
-#define SINGLE_DICE_BET     10
+#import "Constants.h"
 
 @implementation GameEngine
 

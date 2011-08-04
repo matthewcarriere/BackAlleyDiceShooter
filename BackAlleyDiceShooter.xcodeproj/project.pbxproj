@@ -76,6 +76,7 @@
 		34C716FA13D22B6000DBB7C6 /* Die.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Die.m; sourceTree = "<group>"; };
 		34C7170813D2E11E00DBB7C6 /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
 		34C7170913D2E11E00DBB7C6 /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
+		34D5DE1A13EB12AD00E7BF6F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +156,7 @@
 				341B511F13DA91DD00272018 /* Games.plist */,
 				34A24D2A13E7D775005979F3 /* WagerViewController.h */,
 				34A24D2B13E7D775005979F3 /* WagerViewController.m */,
+				34D5DE1A13EB12AD00E7BF6F /* Constants.h */,
 			);
 			path = BackAlleyDiceShooter;
 			sourceTree = "<group>";

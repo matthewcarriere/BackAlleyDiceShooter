@@ -5,121 +5,141 @@
 	<key>Games</key>
 	<array>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>1</string>
 			<key>Name</key>
 			<string>Big</string>
 			<key>Description</key>
 			<string>Roll between 11 and 17</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>0</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>2</string>
 			<key>Name</key>
 			<string>Small</string>
 			<key>Description</key>
 			<string>Roll between 4 and 10</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>0</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>3</string>
 			<key>Name</key>
 			<string>Odd</string>
 			<key>Description</key>
 			<string>Roll Odd</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>0</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>4</string>
 			<key>Name</key>
 			<string>Even</string>
 			<key>Description</key>
 			<string>Roll even</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>0</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>5</string>
 			<key>Name</key>
 			<string>Triple</string>
 			<key>Description</key>
 			<string>Roll 3 the same</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>1</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>180</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>6</string>
 			<key>Name</key>
 			<string>Double</string>
 			<key>Description</key>
 			<string>Roll two the same</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>1</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>10</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>7</string>
 			<key>Name</key>
 			<string>Any Triple</string>
 			<key>Description</key>
 			<string>Roll any 3 the same</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>0</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>30</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>8</string>
 			<key>Name</key>
 			<string>Three Dice Total</string>
 			<key>Description</key>
 			<string>Roll specific total</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
+			<key>Options</key>
+			<array>
+				<string>4 or 17</string>
+				<string>5 or 16</string>
+				<string>6 or 15</string>
+				<string>7 or 14</string>
+				<string>8 or 13</string>
+				<string>9 or 12</string>
+				<string>10 or 11</string>
+			</array>
+			<key>Payouts</key>
+			<array>
+				<string>60</string>
+				<string>30</string>
+				<string>18</string>
+				<string>12</string>
+				<string>8</string>
+				<string>7</string>
+				<string>6</string>
+			</array>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>9</string>
 			<key>Name</key>
 			<string>Combination</string>
 			<key>Description</key>
 			<string>Roll specific numbers</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>2</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>6</string>
 		</dict>
 		<dict>
-            <key>Id</key>
+			<key>Id</key>
 			<string>10</string>
 			<key>Name</key>
 			<string>Single Dice Bet</string>
 			<key>Description</key>
 			<string>Roll specific number</string>
-            <key>Select</key>
+			<key>Select</key>
 			<string>1</string>
-            <key>Payout</key>
+			<key>Payout</key>
 			<string>1</string>
 		</dict>
 	</array>

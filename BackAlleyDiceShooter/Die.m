@@ -8,11 +8,7 @@
 
 #import "Die.h"
 #import "GameEngine.h"
-
-#define NUMBER_OF_SIDES 6
-#define SIZE_OF_DIE     50
-#define GAMEBOARD_WIDTH (320 - 50)
-#define GAMEBOARD_HEIGHT (420 - 50) // height of score display removed.
+#import "Constants.h"
 
 @implementation Die
 
