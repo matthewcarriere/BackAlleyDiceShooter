@@ -93,11 +93,30 @@
     }
 }
 
+- (void)updateDealerLabelForWager:(NSNumber *)wager
+{
+    int funds = wagerSlider.maximumValue;
+    if ([wager intValue] == funds) {
+        dealerLabel.text = @"Keep dreaming.";
+    }
+    else if ([wager intValue] > (funds/2)) {
+        dealerLabel.text = @"That's a big bet.";
+    }
+    else if ([wager intValue] >= (funds * .10)) {
+        dealerLabel.text = @"Boring, but sensible bet.";
+    }
+    else {
+        dealerLabel.text = @"I think mommy is calling.";
+    }
+}
+
 - (IBAction)sliderChanged:(id)sender
 {
     // round of the wager and convert it to an int to get a whole number.
     NSNumber *wager = [NSNumber numberWithFloat:wagerSlider.value + 0.5f];
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d",[wager intValue]];
+    
+    [self updateDealerLabelForWager:wager];
 }
 
 - (IBAction)donePressed:(id)sender
@@ -164,6 +183,7 @@
     self.wagerSlider.value = wager;
     
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d", wager];
+    [self updateDealerLabelForWager:[NSNumber numberWithInt:wager]];
     
     // does the game require a selection of dice?
     if ([[selectedGame objectForKey:@"Select"] intValue] > 0) {
