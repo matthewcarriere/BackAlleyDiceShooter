@@ -20,6 +20,7 @@
 - (float)wager;
 - (void)setWager:(float)wager;
 - (void)setSelectedRolls:(NSArray *)rolls;
+- (void)restart;
 - (BOOL)isBig;
 - (BOOL)isSmall;
 - (BOOL)isOdd;

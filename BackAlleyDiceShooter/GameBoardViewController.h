@@ -12,6 +12,7 @@
 
 @interface GameBoardViewController : UIViewController {
     GameEngine *engine;
+    UIButton *restartGameButton;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *funds;
@@ -19,5 +20,7 @@
 @property (nonatomic, retain) IBOutlet UITapGestureRecognizer *tapGesture;
 @property (nonatomic, retain) IBOutlet UILabel *message;
 @property (nonatomic, retain) IBOutlet UILabel *selectedGameDesriptionLabel;
+
+- (void)updateGameBoard;
 
 @end

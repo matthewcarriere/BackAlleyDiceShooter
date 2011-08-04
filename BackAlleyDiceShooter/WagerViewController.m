@@ -151,8 +151,8 @@
     engine = [GameEngine sharedInstance];
     selectedDice = 0;
     
-    int funds = [[NSNumber numberWithFloat:[engine funds]] intValue];
-    int wager = [[NSNumber numberWithFloat:[engine wager]] intValue];
+    int funds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
+    int wager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
     if (wager == ZERO || wager > funds) {
         // not enough money to cover the current bet, so use default.

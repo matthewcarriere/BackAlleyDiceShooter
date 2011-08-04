@@ -87,6 +87,13 @@ static NSArray *selectedRolls;
 #pragma mark -
 #pragma mark Instance Methods
 
+- (void)restart
+{
+    funds = STARTING_FUNDS;
+    wager = STARTING_WAGER;
+    selectedGame = nil;
+}
+
 - (void)setSelectedRolls:(NSArray *)rolls
 {
     selectedRolls = rolls;

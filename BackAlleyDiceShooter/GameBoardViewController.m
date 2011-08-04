@@ -21,6 +21,30 @@
 @synthesize message;
 @synthesize selectedGameDesriptionLabel;
 
+#pragma mark -
+#pragma mark Restart Game Methods
+
+- (void)restartGame
+{
+    [restartGameButton removeFromSuperview];
+    
+    [engine restart];
+    
+    [self updateGameBoard];
+}
+
+- (void)showRestartGameButton
+{
+    if (restartGameButton == nil) {
+        restartGameButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        restartGameButton.frame = CGRectMake(109, 263, 102, 37);
+        [restartGameButton setTitle:@"Restart" forState:UIControlStateNormal];
+        [restartGameButton addTarget:self action:@selector(restartGame) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    [self.view addSubview:restartGameButton];
+}
+
 - (void)updateGameBoard
 {    
     int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
@@ -33,19 +57,33 @@
     
     if (selectedGameDescription != nil) {
         selectedGameDesriptionLabel.text = [NSString stringWithFormat:@"%@", selectedGameDescription];
+    }
+    else {
+        selectedGameDesriptionLabel.text = @"";
+    }
+    
+    if (currentFunds == NO_MONEY) {
+        message.text = @"You are broke.";
+        [self showRestartGameButton];
+    }
+    else if (currentWager == NO_MONEY) {
+        message.text = @"Tap screen to bet";
+    }
+    else if (selectedGameDescription != nil) {
         message.text = @"Shake to roll dice!";
     }
 }
+
+
+#pragma mark -
+#pragma mark Dice Roll Methods
 
 - (void)rollDice
 {
     int currentFunds = [[NSNumber numberWithFloat:[engine funds] + 0.5f] intValue];
     int currentWager = [[NSNumber numberWithFloat:[engine wager] + 0.5f] intValue];
     
-    if (currentFunds == NO_MONEY) {
-        message.text = @"You are broke.";
-    }
-    else if (currentFunds >= currentWager) {
+    if (currentFunds >= currentWager) {
         [engine rollDice];
         [self updateGameBoard];
         
