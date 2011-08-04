@@ -13,6 +13,7 @@
     int currentValue;
 }
 
+- (id)initWithRoll:(int)roll;
 - (int)roll;
 
 @end

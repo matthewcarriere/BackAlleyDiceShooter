@@ -122,6 +122,16 @@
     return self;
 }
 
+- (id)initWithRoll:(int)roll
+{
+    self = [super init];
+    if (self) {
+        currentValue = roll;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     self.backgroundColor = [UIColor whiteColor];

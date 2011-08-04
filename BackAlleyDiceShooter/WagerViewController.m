@@ -8,15 +8,64 @@
 
 #import "WagerViewController.h"
 #import "GameEngine.h"
+#import "Die.h"
+
+// TODO: consolidate constants.
+#define ZERO            0
+#define NUMBER_OF_DICE  6
+#define SIZE_OF_DIE     50
+#define FIRST_ROW       220
+#define SECOND_ROW      300
+#define PADDING         30
+#define DICE_PER_ROW    3
 
 @implementation WagerViewController
-
-#define ZERO    0
 
 @synthesize dealerLabel;
 @synthesize wagerLabel;
 @synthesize wagerSlider;
 @synthesize selectedGame;
+@synthesize dice;
+
+- (CGRect)dieFrameFromIndex:(int)index
+{
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    
+    float x = bounds.size.width / 2 - (((SIZE_OF_DIE * DICE_PER_ROW) + (PADDING * (DICE_PER_ROW - 1))) / 2);;
+    float y = FIRST_ROW;
+    int position;
+    
+    if (index > DICE_PER_ROW) {
+        y = SECOND_ROW;
+        position = (index - DICE_PER_ROW);
+    }
+    else {
+        position = index;
+    }
+    
+    if (position == 1) {
+        return CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
+    }
+    else {
+        x += (SIZE_OF_DIE * (position - 1)) + (PADDING * (position - 1));
+        return CGRectMake(x, y, SIZE_OF_DIE, SIZE_OF_DIE);
+    }
+
+}
+
+- (void)drawDice
+{
+    self.dice = [[NSMutableArray alloc] initWithCapacity:6];
+    Die *die;
+    
+    for (int i = 1; i <= NUMBER_OF_DICE; i++) {        
+        die = [[Die alloc] initWithRoll:i];
+        die.frame = [self dieFrameFromIndex:i];
+        
+        [dice addObject:die];
+        [self.view addSubview:die];
+    }
+}
 
 - (IBAction)sliderChanged:(id)sender
 {
@@ -79,6 +128,8 @@
     self.wagerSlider.value = wager;
     
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d", wager];
+    
+    [self drawDice];
 }
 
 - (void)viewDidUnload

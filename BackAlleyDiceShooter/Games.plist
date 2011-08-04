@@ -11,6 +11,8 @@
 			<string>Big</string>
 			<key>Description</key>
 			<string>Roll between 11 and 17</string>
+            <key>Select</key>
+			<string>0</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -19,6 +21,8 @@
 			<string>Small</string>
 			<key>Description</key>
 			<string>Roll between 4 and 10</string>
+            <key>Select</key>
+			<string>0</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -27,6 +31,8 @@
 			<string>Odd</string>
 			<key>Description</key>
 			<string>Roll Odd</string>
+            <key>Select</key>
+			<string>0</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -35,6 +41,8 @@
 			<string>Even</string>
 			<key>Description</key>
 			<string>Roll even</string>
+            <key>Select</key>
+			<string>0</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -43,6 +51,8 @@
 			<string>Triple</string>
 			<key>Description</key>
 			<string>Roll 3 the same</string>
+            <key>Select</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -51,6 +61,8 @@
 			<string>Double</string>
 			<key>Description</key>
 			<string>Roll two the same</string>
+            <key>Select</key>
+			<string>1</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -59,6 +71,8 @@
 			<string>Any Triple</string>
 			<key>Description</key>
 			<string>Roll any 3 the same</string>
+            <key>Select</key>
+			<string>0</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -75,6 +89,8 @@
 			<string>Combination</string>
 			<key>Description</key>
 			<string>Roll specific numbers</string>
+            <key>Select</key>
+			<string>2</string>
 		</dict>
 		<dict>
             <key>Id</key>
@@ -83,6 +99,8 @@
 			<string>Single Dice Bet</string>
 			<key>Description</key>
 			<string>Roll specific number</string>
+            <key>Select</key>
+			<string>1</string>
 		</dict>
 	</array>
 </dict>
