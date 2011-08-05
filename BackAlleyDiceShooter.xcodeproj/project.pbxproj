@@ -13,6 +13,9 @@
 		3482122113D66310006CA6BD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* GameViewController.m */; };
 		3491537E13D94AEC00497441 /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491537D13D94AEC00497441 /* GameTableViewCell.m */; };
 		34A24D2C13E7D775005979F3 /* WagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A24D2B13E7D775005979F3 /* WagerViewController.m */; };
+		34B1EFBC13EB7BD800EAF119 /* diceRoll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34B1EFBB13EB7BD800EAF119 /* diceRoll.wav */; };
+		34B1EFBE13EB7E0700EAF119 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B1EFBD13EB7E0700EAF119 /* AVFoundation.framework */; };
+		34B1EFC013EB7F7900EAF119 /* diceDrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34B1EFBF13EB7F7900EAF119 /* diceDrop.wav */; };
 		34C716C213D22AB500DBB7C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C113D22AB500DBB7C6 /* UIKit.framework */; };
 		34C716C413D22AB500DBB7C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C313D22AB500DBB7C6 /* Foundation.framework */; };
 		34C716C613D22AB500DBB7C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C716C513D22AB500DBB7C6 /* CoreGraphics.framework */; };
@@ -53,6 +56,9 @@
 		3491537D13D94AEC00497441 /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
 		34A24D2A13E7D775005979F3 /* WagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WagerViewController.h; sourceTree = "<group>"; };
 		34A24D2B13E7D775005979F3 /* WagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WagerViewController.m; sourceTree = "<group>"; };
+		34B1EFBB13EB7BD800EAF119 /* diceRoll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = diceRoll.wav; sourceTree = "<group>"; };
+		34B1EFBD13EB7E0700EAF119 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		34B1EFBF13EB7F7900EAF119 /* diceDrop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = diceDrop.wav; sourceTree = "<group>"; };
 		34C716BD13D22AB500DBB7C6 /* BackAlleyDiceShooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackAlleyDiceShooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C716C113D22AB500DBB7C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		34C716C313D22AB500DBB7C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B1EFBE13EB7E0700EAF119 /* AVFoundation.framework in Frameworks */,
 				34C716C213D22AB500DBB7C6 /* UIKit.framework in Frameworks */,
 				34C716C413D22AB500DBB7C6 /* Foundation.framework in Frameworks */,
 				34C716C613D22AB500DBB7C6 /* CoreGraphics.framework in Frameworks */,
@@ -126,6 +133,7 @@
 		34C716C013D22AB500DBB7C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34B1EFBD13EB7E0700EAF119 /* AVFoundation.framework */,
 				34C716C113D22AB500DBB7C6 /* UIKit.framework */,
 				34C716C313D22AB500DBB7C6 /* Foundation.framework */,
 				34C716C513D22AB500DBB7C6 /* CoreGraphics.framework */,
@@ -141,9 +149,11 @@
 				345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */,
 				3482121F13D66310006CA6BD /* GameViewController.h */,
 				3482122013D66310006CA6BD /* GameViewController.m */,
+				34B1EFBF13EB7F7900EAF119 /* diceDrop.wav */,
 				34C716D013D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.h */,
 				34C716D113D22AB500DBB7C6 /* BackAlleyDiceShooterAppDelegate.m */,
 				34C716D313D22AB500DBB7C6 /* MainStoryboard.storyboard */,
+				34B1EFBB13EB7BD800EAF119 /* diceRoll.wav */,
 				3491537C13D94AEC00497441 /* GameTableViewCell.h */,
 				3491537D13D94AEC00497441 /* GameTableViewCell.m */,
 				34C716D613D22AB500DBB7C6 /* GameBoardViewController.h */,
@@ -268,6 +278,8 @@
 				341B512013DA91DD00272018 /* Games.plist in Resources */,
 				345D8DFD13E91D4700B0EF11 /* gameboard.png in Resources */,
 				345D8DFE13E91D4700B0EF11 /* gameboard@2x.png in Resources */,
+				34B1EFBC13EB7BD800EAF119 /* diceRoll.wav in Resources */,
+				34B1EFC013EB7F7900EAF119 /* diceDrop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

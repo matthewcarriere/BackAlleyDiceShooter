@@ -11,6 +11,7 @@
 #import "Die.h"
 #import "GameViewController.h"
 #import "Constants.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation GameBoardViewController
 
@@ -111,6 +112,21 @@
     // Get the shared GameEngine instance
     engine = [GameEngine sharedInstance];
     
+    NSString *diceRollPath = [[NSBundle mainBundle] pathForResource:@"diceRoll" ofType:@"wav"];
+    diceRoll = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceRollPath] error:nil];
+    // range is 0 to 1
+    diceRoll.volume = 1.0f;
+    // preload buffer
+    [diceRoll prepareToPlay];
+    
+    NSString *diceDropPath = [[NSBundle mainBundle] pathForResource:@"diceDrop" ofType:@"wav"];
+    diceDrop = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceDropPath] error:nil];
+    // range is 0 to 1
+    diceDrop.volume = 1.0f;
+    // preload buffer
+    [diceDrop prepareToPlay];
+    
+    
     // add dice to gameboard
     for (Die *die in [engine dice]) {
         [self.view addSubview:die];
@@ -158,9 +174,18 @@
     return YES;
 }
 
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.type == UIEventSubtypeMotionShake) {
+        [diceRoll play];
+    }
+}
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.type == UIEventSubtypeMotionShake) {
+        [diceRoll stop];
+        [diceDrop play];
         [self rollDice];
     }
 }

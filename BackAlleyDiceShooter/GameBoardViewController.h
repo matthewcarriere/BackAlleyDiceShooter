@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class GameEngine;
+@class AVAudioPlayer;
 
 @interface GameBoardViewController : UIViewController {
     GameEngine *engine;
     UIButton *restartGameButton;
+    AVAudioPlayer *diceRoll;
+    AVAudioPlayer *diceDrop;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *funds;
