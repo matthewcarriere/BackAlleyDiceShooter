@@ -112,14 +112,14 @@
     // Get the shared GameEngine instance
     engine = [GameEngine sharedInstance];
     
-    NSString *diceRollPath = [[NSBundle mainBundle] pathForResource:@"diceRoll" ofType:@"wav"];
+    NSString *diceRollPath = [[NSBundle mainBundle] pathForResource:@"diceRoll" ofType:@"caf"];
     diceRoll = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceRollPath] error:nil];
     // range is 0 to 1
     diceRoll.volume = 1.0f;
     // preload buffer
     [diceRoll prepareToPlay];
     
-    NSString *diceDropPath = [[NSBundle mainBundle] pathForResource:@"diceDrop" ofType:@"wav"];
+    NSString *diceDropPath = [[NSBundle mainBundle] pathForResource:@"diceDrop" ofType:@"caf"];
     diceDrop = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceDropPath] error:nil];
     // range is 0 to 1
     diceDrop.volume = 1.0f;
@@ -176,16 +176,20 @@
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    if (event.type == UIEventSubtypeMotionShake) {
-        [diceRoll play];
-    }
+    [diceDrop stop];
+    
+    [diceRoll setCurrentTime:0.0];
+    [diceRoll play];
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.type == UIEventSubtypeMotionShake) {
         [diceRoll stop];
+        
+        [diceDrop setCurrentTime:0.0];
         [diceDrop play];
+        
         [self rollDice];
     }
 }

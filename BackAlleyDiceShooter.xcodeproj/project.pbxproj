@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		341B512013DA91DD00272018 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341B511F13DA91DD00272018 /* Games.plist */; };
+		343C308613EBD828001737F1 /* diceDrop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 343C308413EBD828001737F1 /* diceDrop.caf */; };
+		343C308713EBD828001737F1 /* diceRoll.caf in Resources */ = {isa = PBXBuildFile; fileRef = 343C308513EBD828001737F1 /* diceRoll.caf */; };
 		345D8DFD13E91D4700B0EF11 /* gameboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 345D8DFB13E91D4700B0EF11 /* gameboard.png */; };
 		345D8DFE13E91D4700B0EF11 /* gameboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */; };
 		3482122113D66310006CA6BD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482122013D66310006CA6BD /* GameViewController.m */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		341B511F13DA91DD00272018 /* Games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Games.plist; sourceTree = "<group>"; };
+		343C308413EBD828001737F1 /* diceDrop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = diceDrop.caf; sourceTree = "<group>"; };
+		343C308513EBD828001737F1 /* diceRoll.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = diceRoll.caf; sourceTree = "<group>"; };
 		345D8DFB13E91D4700B0EF11 /* gameboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameboard.png; sourceTree = "<group>"; };
 		345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameboard@2x.png"; sourceTree = "<group>"; };
 		3482121F13D66310006CA6BD /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		34C716C713D22AB500DBB7C6 /* BackAlleyDiceShooter */ = {
 			isa = PBXGroup;
 			children = (
+				343C308413EBD828001737F1 /* diceDrop.caf */,
+				343C308513EBD828001737F1 /* diceRoll.caf */,
 				345D8DFB13E91D4700B0EF11 /* gameboard.png */,
 				345D8DFC13E91D4700B0EF11 /* gameboard@2x.png */,
 				3482121F13D66310006CA6BD /* GameViewController.h */,
@@ -280,6 +286,8 @@
 				345D8DFE13E91D4700B0EF11 /* gameboard@2x.png in Resources */,
 				34B1EFBC13EB7BD800EAF119 /* diceRoll.wav in Resources */,
 				34B1EFC013EB7F7900EAF119 /* diceDrop.wav in Resources */,
+				343C308613EBD828001737F1 /* diceDrop.caf in Resources */,
+				343C308713EBD828001737F1 /* diceRoll.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
