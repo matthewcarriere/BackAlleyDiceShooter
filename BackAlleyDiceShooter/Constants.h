@@ -40,5 +40,8 @@
 #define THREE_DICE_TOTAL    8
 #define COMBINATION         9
 #define SINGLE_DICE_BET     10
+#define FOUR_NUMBER_COMBO   11
+#define THREE_NUMBER_COMBO  12
+#define DOUBLE_AND_SINGLE   13
 
 #endif

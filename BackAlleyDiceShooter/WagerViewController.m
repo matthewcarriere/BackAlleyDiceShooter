@@ -85,6 +85,20 @@
     }
 }
 
+- (void)showPicker
+{    
+    picker = [[UIPickerView alloc] init];
+    picker.frame = CGRectMake(0, 200, 320, 216);
+    
+    picker.dataSource = self;
+    picker.delegate = self;
+    
+    picker.showsSelectionIndicator = YES;
+
+    [self.view addSubview:picker];
+    
+}
+
 - (void)updateDealerLabelForWager:(NSNumber *)wager
 {
     int funds = wagerSlider.maximumValue;
@@ -117,10 +131,47 @@
     [engine setSelectedGame:selectedGame];
     
     NSMutableArray *selectedRolls = [[NSMutableArray alloc] init];
-    for (Die *die in dice) {
-        if (die.selected) {
-            NSNumber *roll = [NSNumber numberWithInt:[die currentValue]];
-            [selectedRolls addObject:roll];
+    
+    // Only THREE_DICE_TOTAL uses the picker.
+    if (picker != nil) {
+        int selectedRow = [picker selectedRowInComponent:0];
+        switch (selectedRow) {
+            case 0:
+                [selectedRolls addObject:[NSNumber numberWithInt:4]];
+                [selectedRolls addObject:[NSNumber numberWithInt:17]];
+                break;
+            case 1:
+                [selectedRolls addObject:[NSNumber numberWithInt:5]];
+                [selectedRolls addObject:[NSNumber numberWithInt:16]];
+                break;
+            case 2:
+                [selectedRolls addObject:[NSNumber numberWithInt:6]];
+                [selectedRolls addObject:[NSNumber numberWithInt:15]];
+                break;
+            case 3:
+                [selectedRolls addObject:[NSNumber numberWithInt:7]];
+                [selectedRolls addObject:[NSNumber numberWithInt:14]];
+                break;
+            case 4:
+                [selectedRolls addObject:[NSNumber numberWithInt:8]];
+                [selectedRolls addObject:[NSNumber numberWithInt:13]];
+                break;
+            case 5:
+                [selectedRolls addObject:[NSNumber numberWithInt:9]];
+                [selectedRolls addObject:[NSNumber numberWithInt:12]];
+                break;
+            case 6:
+                [selectedRolls addObject:[NSNumber numberWithInt:10]];
+                [selectedRolls addObject:[NSNumber numberWithInt:11]];
+                break;
+        }
+    }
+    else {
+        for (Die *die in dice) {
+            if (die.selected) {
+                NSNumber *roll = [NSNumber numberWithInt:[die currentValue]];
+                [selectedRolls addObject:roll];
+            }
         }
     }
     [engine setSelectedRolls:selectedRolls];
@@ -177,8 +228,12 @@
     self.wagerLabel.text = [NSString stringWithFormat:@"$%d", wager];
     [self updateDealerLabelForWager:[NSNumber numberWithInt:wager]];
     
+    if ([[selectedGame objectForKey:@"Id"] intValue] == THREE_DICE_TOTAL) {
+        [self showPicker];
+        doneButton.enabled = YES;
+    }
     // does the game require a selection of dice?
-    if ([[selectedGame objectForKey:@"Select"] intValue] > 0) {
+    else if ([[selectedGame objectForKey:@"Select"] intValue] > 0) {
         [self drawDice];
     }
     else {
@@ -197,6 +252,30 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -
+#pragma mark PickerView DataSource Methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSArray *array = (NSArray *)[selectedGame objectForKey:@"Options"];
+    return [array count];
+}
+
+#pragma mark -
+#pragma mark PickerView Delegate Methods
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSArray *array = (NSArray *)[selectedGame objectForKey:@"Options"];
+    NSString *title = (NSString *)[array objectAtIndex:row];
+    return title;
 }
 
 @end

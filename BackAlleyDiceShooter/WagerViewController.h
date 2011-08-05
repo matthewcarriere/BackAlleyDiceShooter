@@ -10,9 +10,10 @@
 
 @class GameEngine;
 
-@interface WagerViewController : UIViewController {
+@interface WagerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     GameEngine *engine;
     int selectedDice;
+    UIPickerView *picker;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *dealerLabel;

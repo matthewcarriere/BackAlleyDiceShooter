@@ -66,7 +66,7 @@
         [self showRestartGameButton];
     }
     else if (currentWager == NO_MONEY) {
-        message.text = @"Tap screen to bet";
+        message.text = @"Double tap to bet";
     }
     else if (selectedGameDescription != nil) {
         message.text = @"Shake to roll dice!";
@@ -90,7 +90,7 @@
             message.text = @"You won!";
         }
     }
-    else {
+    else if (currentFunds != NO_MONEY) {
         message.text = @"You can't cover your bet!";
     }
 }

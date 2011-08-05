@@ -110,6 +110,49 @@ static NSArray *selectedRolls;
     wager = newWager;
 }
 
+- (int)calculatePayoutMultiplier
+{
+    int selectedGameId = [[selectedGame objectForKey:@"Id"] intValue];
+    int payoutMultiplier;
+    
+    if (selectedGameId == THREE_DICE_TOTAL) {
+        NSArray *payouts = (NSArray *)[selectedGame objectForKey:@"Payouts"];
+        int firstNumber = [[selectedRolls objectAtIndex:0] intValue];
+        
+        switch (firstNumber) {
+            case 4:
+                payoutMultiplier = [[payouts objectAtIndex:0] intValue];
+                break;
+            case 5:
+                payoutMultiplier = [[payouts objectAtIndex:1] intValue];
+                break;
+            case 6:
+                payoutMultiplier = [[payouts objectAtIndex:2] intValue];
+                break;
+            case 7:
+                payoutMultiplier = [[payouts objectAtIndex:3] intValue];
+                break;
+            case 8:
+                payoutMultiplier = [[payouts objectAtIndex:4] intValue];
+                break;
+            case 9:
+                payoutMultiplier = [[payouts objectAtIndex:5] intValue];
+                break;
+            case 10:
+                payoutMultiplier = [[payouts objectAtIndex:6] intValue];
+                break;
+            case 11:
+                payoutMultiplier = [[payouts objectAtIndex:7] intValue];
+                break;
+        }
+    }
+    else {
+        payoutMultiplier = [[selectedGame objectForKey:@"Payout"] intValue];
+    }
+    
+    return payoutMultiplier;
+}
+
 - (void)rollDice
 {    
     [rolls removeAllObjects];
@@ -146,6 +189,7 @@ static NSArray *selectedRolls;
             isWin = [self isTriple];
             break;
         case THREE_DICE_TOTAL:
+            isWin = [self isThreeDiceTotal:[[selectedRolls objectAtIndex:0] intValue] Or:[[selectedRolls objectAtIndex:1] intValue]];
             break;
         case COMBINATION:
             isWin = [self isCombinationOf:[[selectedRolls objectAtIndex:0] intValue] And:[[selectedRolls objectAtIndex:1] intValue]];
@@ -153,15 +197,28 @@ static NSArray *selectedRolls;
         case SINGLE_DICE_BET:
             isWin = [self hasRoll:[[selectedRolls objectAtIndex:0] intValue]];
             break;
+        case FOUR_NUMBER_COMBO:
+            isWin = [self isFourNumberCombination];
+            break;
+        case THREE_NUMBER_COMBO:
+            isWin = [self isSpecificThreeNumberCombinationOf:[[selectedRolls objectAtIndex:0] intValue] And:[[selectedRolls objectAtIndex:1] intValue] And:[[selectedRolls objectAtIndex:2] intValue]];
+            break;
+        case DOUBLE_AND_SINGLE:
+            isWin = [self isSpecificDouble:[[selectedRolls objectAtIndex:0] intValue] withNumber:[[selectedRolls objectAtIndex:1] intValue]];
+            break;
             
         default:
             return; // no game selected.
             break;
     }
     
-    int payoutMultiplier = [[selectedGame objectForKey:@"Payout"] intValue];
+    NSLog(@"Funds: %f", funds);
+    NSLog(@"Wager: %f", wager);
+    
     if (isWin) {
+        int payoutMultiplier = [self calculatePayoutMultiplier];
         funds += (wager * payoutMultiplier);
+        NSLog(@"Payout: %f", (wager * payoutMultiplier));
     }
     else {
         funds -= wager;
