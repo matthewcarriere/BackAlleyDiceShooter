@@ -21,6 +21,20 @@
 @synthesize message;
 @synthesize selectedGameDesriptionLabel;
 
+- (void)showDice
+{
+    for (Die *die in [engine dice]) {
+        [self.view addSubview:die];
+    }
+}
+
+- (void)hideDice
+{
+    for (Die *die in [engine dice]) {
+        [die removeFromSuperview];
+    }
+}
+
 #pragma mark -
 #pragma mark Restart Game Methods
 
@@ -88,6 +102,9 @@
         [self updateGameBoard];
         
         if ([engine isWin]) {
+            [winPlayer setCurrentTime:0.0f];
+            [winPlayer play];
+            
             message.text = @"You won!";
         }
     }
@@ -112,26 +129,23 @@
     // Get the shared GameEngine instance
     engine = [GameEngine sharedInstance];
     
-    NSString *diceRollPath = [[NSBundle mainBundle] pathForResource:@"diceRoll" ofType:@"caf"];
-    diceRoll = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceRollPath] error:nil];
-    // range is 0 to 1
-    diceRoll.volume = 1.0f;
-    // preload buffer
-    [diceRoll prepareToPlay];
+    NSString *rollPath = [[NSBundle mainBundle] pathForResource:@"roll" ofType:@"caf"];
+    rollPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:rollPath] error:nil];
+    rollPlayer.delegate = self;
+    rollPlayer.volume = 1.0f;
+    [rollPlayer prepareToPlay];
     
-    NSString *diceDropPath = [[NSBundle mainBundle] pathForResource:@"diceDrop" ofType:@"caf"];
-    diceDrop = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:diceDropPath] error:nil];
-    // range is 0 to 1
-    diceDrop.volume = 1.0f;
-    // preload buffer
-    [diceDrop prepareToPlay];
+    NSString *dropPath = [[NSBundle mainBundle] pathForResource:@"drop" ofType:@"caf"];
+    dropPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dropPath] error:nil];
+    dropPlayer.volume = 1.0f;
+    [dropPlayer prepareToPlay];
     
+    NSString *winPath = [[NSBundle mainBundle] pathForResource:@"win" ofType:@"caf"];
+    winPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:winPath] error:nil];
+    winPlayer.volume = 1.0f;
+    [winPlayer prepareToPlay];
     
-    // add dice to gameboard
-    for (Die *die in [engine dice]) {
-        [self.view addSubview:die];
-    }
-    
+    [self showDice];
     [self rollDice];
 }
 
@@ -176,22 +190,27 @@
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    [diceDrop stop];
+    NSLog(@"Dice rolled...");
     
-    [diceRoll setCurrentTime:0.0];
-    [diceRoll play];
+    if (event.type == UIEventSubtypeMotionShake) {
+        [self hideDice];
+        [rollPlayer setCurrentTime:0.0f];
+        [rollPlayer play];
+    }
 }
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+#pragma mark -
+#pragma mark AVAudioPlayerDelegate Methods
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
-    if (event.type == UIEventSubtypeMotionShake) {
-        [diceRoll stop];
-        
-        [diceDrop setCurrentTime:0.0];
-        [diceDrop play];
-        
-        [self rollDice];
-    }
+    NSLog(@"Audio finished.");
+    
+    [self showDice];
+    [dropPlayer setCurrentTime:0.0f];
+    [dropPlayer play];
+    
+    [self rollDice];
 }
 
 @end

@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class GameEngine;
-@class AVAudioPlayer;
 
-@interface GameBoardViewController : UIViewController {
+@interface GameBoardViewController : UIViewController <AVAudioPlayerDelegate> {
     GameEngine *engine;
     UIButton *restartGameButton;
-    AVAudioPlayer *diceRoll;
-    AVAudioPlayer *diceDrop;
+    AVAudioPlayer *rollPlayer;
+    AVAudioPlayer *dropPlayer;
+    AVAudioPlayer *winPlayer;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *funds;
