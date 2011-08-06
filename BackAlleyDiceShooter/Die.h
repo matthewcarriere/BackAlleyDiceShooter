@@ -11,6 +11,7 @@
 @interface Die : UIControl
 {
     int currentValue;
+    UIImage *dieImage;
 }
 
 - (id)initWithRoll:(int)roll;

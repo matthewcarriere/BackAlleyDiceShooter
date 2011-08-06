@@ -10,8 +10,9 @@
 #define BackAlleyDiceShooter_Constants_h
 
 // Interface
-#define GAMEBOARD_WIDTH     (320 - 50)
-#define GAMEBOARD_HEIGHT    (420 - 50) // height of score display removed.
+// Gameboard dimensions will be different on non retina devices
+#define GAMEBOARD_WIDTH     (320 - 75)
+#define GAMEBOARD_HEIGHT    (420 - 75) // height of score display removed.
 #define FIRST_ROW           220
 #define SECOND_ROW          300
 #define PADDING             30
@@ -24,7 +25,7 @@
 
 // Dice
 #define NUMBER_OF_DICE      3
-#define SIZE_OF_DIE         50
+#define SIZE_OF_DIE         75 // needs to be different for non retina devices
 #define NUMBER_OF_SIDES     6
 #define ALL_DICE            6
 #define DICE_PER_ROW        3

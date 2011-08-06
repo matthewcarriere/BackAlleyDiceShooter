@@ -61,68 +61,37 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    if (self.selected) {
-        CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
-    }
-    else {
-        CGContextSetFillColorWithColor(context, [[UIColor grayColor] CGColor]);
-    }
-    CGContextFillRect(context, rect);
-    
-    CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
-    
     NSLog(@"%d", currentValue);
     switch (currentValue) {
         case 1:
-            CGContextAddEllipseInRect(context, CGRectMake(20, 20, 10, 10));
+            // TODO: need to dynamically load retina image
+            // TODO: *roll* the die by alternating images?
+            dieImage = self.selected ? [UIImage imageNamed:@"one@2x"] : [UIImage imageNamed:@"oneDark@2x"];
             break;
         case 2:
-            CGContextAddEllipseInRect(context, CGRectMake(5, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 35, 10, 10));
+            dieImage = self.selected ? [UIImage imageNamed:@"two@2x"] : [UIImage imageNamed:@"twoDark@2x"];
             break;
         case 3:
-            CGContextAddEllipseInRect(context, CGRectMake(5, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(20, 20, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 35, 10, 10));
+            dieImage = self.selected ? [UIImage imageNamed:@"three@2x"] : [UIImage imageNamed:@"threeDark@2x"];
             break;
-        case 4:
-            // Top Left, Top Right, Bottom Left, Bottom Right
-            CGContextAddEllipseInRect(context, CGRectMake(5, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(5, 35, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 35, 10, 10));
+        case 4:            
+            dieImage = self.selected ? [UIImage imageNamed:@"four@2x"] : [UIImage imageNamed:@"fourDark@2x"];
             break;
-        case 5:
-            CGContextAddEllipseInRect(context, CGRectMake(5, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(5, 35, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 35, 10, 10));
-            
-            CGContextAddEllipseInRect(context, CGRectMake(20, 20, 10, 10));
+        case 5:            
+            dieImage = self.selected ? [UIImage imageNamed:@"five@2x"] : [UIImage imageNamed:@"fiveDark@2x"];
             break;
-        case 6:
-            CGContextAddEllipseInRect(context, CGRectMake(5, 5, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 5, 10, 10));
-            
-            // Middle
-            CGContextAddEllipseInRect(context, CGRectMake(5, 20, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 20, 10, 10));
-            
-            CGContextAddEllipseInRect(context, CGRectMake(5, 35, 10, 10));
-            CGContextAddEllipseInRect(context, CGRectMake(35, 35, 10, 10));
+        case 6:            
+            dieImage = self.selected ? [UIImage imageNamed:@"six@2x"] : [UIImage imageNamed:@"sixDark@2x"];
             break;
     }
-    CGContextFillPath(context);
-    
+    [dieImage drawInRect:rect];
 }
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        [self setBackgroundColor: [UIColor clearColor]];
     }
     
     return self;
@@ -136,11 +105,6 @@
     }
     
     return self;
-}
-
-- (void)viewDidLoad
-{
-    self.backgroundColor = [UIColor whiteColor];
 }
 
 @end
