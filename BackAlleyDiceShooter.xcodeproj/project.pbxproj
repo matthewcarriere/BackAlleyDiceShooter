@@ -554,7 +554,7 @@
 		34C716F713D22AB500DBB7C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BackAlleyDiceShooter.app/BackAlleyDiceShooter";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Back Alley DS.app/Back Alley DS";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -562,6 +562,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BackAlleyDiceShooter/BackAlleyDiceShooter-Prefix.pch";
 				INFOPLIST_FILE = "BackAlleyDiceShooterTests/BackAlleyDiceShooterTests-Info.plist";
+				ORDER_FILE = "$(BUILT_PRODUCTS_DIR)/Back Alley DS.app/Back Alley DS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -571,7 +572,7 @@
 		34C716F813D22AB500DBB7C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BackAlleyDiceShooter.app/BackAlleyDiceShooter";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Back Alley DS.app/BackAlleyDiceShooter";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -579,6 +580,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BackAlleyDiceShooter/BackAlleyDiceShooter-Prefix.pch";
 				INFOPLIST_FILE = "BackAlleyDiceShooterTests/BackAlleyDiceShooterTests-Info.plist";
+				ORDER_FILE = "$(BUILT_PRODUCTS_DIR)/Back Alley DS.app/Back Alley DS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
